@@ -1,0 +1,62 @@
+@use "mixin";
+@use "variable";
+
+/*================================
+service
+===============================*/
+.service-items {
+  display: flex;
+  margin-top: 100px;
+
+  @include mixin.mq("sp") {
+   flex-direction: column;
+  }
+}
+.service-item{
+  @include mixin.mq("sp") {
+    margin-top: -15px;
+    
+    &:not(:first-child){
+      margin-top: 25px;
+    }
+   }
+}
+.service-link {
+  position: relative;
+  background: #000;
+  display: inline-block;
+  color: #fff;
+}
+
+.service-image {
+  width: 33vw;
+
+  @include mixin.mq("sp") {
+   width: 100%;
+  }
+  &:hover {
+    cursor: pointer;
+    transition-duration: 0.3s;
+    opacity: 0.4;
+  }
+}
+
+.service-text {
+  //上下左右中央揃え
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: variable.$font-en;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 2.5rem;
+
+  @include mixin.mq("tab") {
+    font-size: 1.25rem;
+   }
+
+  @include mixin.mq("sp") {
+    font-size: 1.25rem;
+   }
+}

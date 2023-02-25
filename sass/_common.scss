@@ -1,0 +1,273 @@
+@use "mixin";
+@use "variable";
+
+/*================================
+common - 共通スタイル
+===============================*/
+
+@include mixin.mq(sp) {
+    .is-pc {
+      display: none;
+    }
+  }
+  @include mixin.mq(sp) {
+    .is-tab {
+      display: none;
+    }
+  }
+  
+  @include mixin.mq(pc) {
+    .is-sp {
+      display: none;
+    }
+  }
+
+
+  /*================================
+section
+===============================*/
+.section{
+  padding: 100px 0 70px;
+
+  @include mixin.mq("sp") {
+    padding: 100px 0 40px;
+  }
+}
+.section2{
+  padding: 48px 0 70px;
+}
+.section-title{
+  font-family: variable.$font-en;
+  color: variable.$base-color;
+  font-size: 3.75rem;
+  font-weight: bold;
+  font-style: italic;
+  margin:0 auto;
+
+  @include mixin.mq("sp") {
+    font-size: 2rem;
+  }
+
+  &::after{
+    content: "";
+    display: inline-block;
+    background-color: variable.$base-color;
+    width: 200px;
+    height: 5px;
+    margin-left: 30px;
+    vertical-align: middle;
+
+    @include mixin.mq("sp") {
+     width: 90px;
+    }
+   }
+}
+
+.section-title2{
+  font-family: variable.$font-en;
+  color: variable.$base-color;
+  font-size: 3.75rem;
+  font-weight: bold;
+  font-style: italic;
+  margin:0 auto;
+
+  @include mixin.mq("tab") {
+    padding-right: 30px;
+  }
+
+  @include mixin.mq("sp") {
+    font-size: 2rem;
+    padding-right: 0;
+  }
+
+  &::after{
+    content: "";
+    display: inline-block;
+    background-color: #fff;
+    width: 200px;
+    height: 5px;
+    margin-left: 30px;
+    vertical-align: middle;
+
+    @include mixin.mq("sp") {
+      width: 90px;
+     }
+   }
+}
+
+.section-title3{
+  font-family: variable.$font-en;
+  color: variable.$base-color;
+  font-size: 3.75rem;
+  font-weight: bold;
+  font-style: italic;
+  margin:0 auto;
+
+  @include mixin.mq("sp") {
+    font-size: 2rem;
+    margin-top: 5px;
+  }
+
+  &::after{
+    content: "";
+    display: inline-block;
+    background-color: variable.$base-color;
+    width: 200px;
+    height: 5px;
+    margin-left: 30px;
+    vertical-align: middle;
+
+    @include mixin.mq("sp") {
+      width: 90px;
+     }
+   }
+}
+
+.section-title4{
+  font-family: variable.$font-en;
+  color: variable.$base-color;
+  font-size: 3.75rem;
+  font-weight: bold;
+  font-style: italic;
+  margin:0 auto;
+
+  @include mixin.mq("sp") {
+    font-size: 2rem;
+
+  }
+
+  &::after{
+    content: "";
+    display: inline-block;
+    background-color: #fff;
+    width: 200px;
+    height: 5px;
+    margin-left: 30px;
+    vertical-align: middle;
+
+    @include mixin.mq("sp") {
+      width: 90px;
+     }
+   }
+}
+.section-bottom{
+  font-family: variable.$font-en;
+  font-size: 5.625rem;
+  font-weight: bold;
+  color:variable.$base-color;
+  opacity: .05;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @include mixin.mq("tab") {
+    max-width: 760px;
+  }
+
+  @include mixin.mq("sp") {
+    max-width: 345px;
+    font-size: 2.5rem;
+  }
+}
+.section-bottom2{
+  font-family: variable.$font-en;
+  font-size: 5.625rem;
+  font-weight: bold;
+  color:variable.$base-color;
+  opacity: .05;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @include mixin.mq("tab") {
+    max-width: 760px;
+  }
+
+  @include mixin.mq("sp") {
+    max-width: 345px;
+    font-size: 2.5rem;
+  }
+}
+.text-right{
+  text-align: right;
+  margin: 70px auto 0;
+  max-width: 1200px;
+
+  @include mixin.mq("tab") {
+    max-width: 760px;
+  }
+
+  @include mixin.mq("sp") {
+    max-width: 345px;
+    margin: 90px auto 0;
+  }
+}
+
+.text-right2{
+  text-align: right;
+  margin: 70px auto 0;
+  max-width: 1200px;
+
+  @include mixin.mq("tab") {
+    max-width: 96%;
+  }
+
+  @include mixin.mq("sp") {
+    max-width: 86%;
+  }
+}
+
+.text-right3{
+  text-align: right;
+  margin: 70px auto 0;
+  max-width: 1200px;
+
+  @include mixin.mq("tab") {
+    max-width: 760px;
+  }
+
+  @include mixin.mq("sp") {
+    max-width: 345px;
+    margin: 40px auto 0;
+  }
+}
+
+.text-right4{
+  text-align: right;
+  margin: 70px auto 0;
+  max-width: 1200px;
+
+  @include mixin.mq("tab") {
+    max-width: 88%;
+  }
+
+  @include mixin.mq("sp") {
+    max-width: 88%;
+    margin: 50px auto 0;
+  }
+}
+
+.section-link{
+  margin-top: 90px;
+  text-align: center;
+
+  @include mixin.mq("sp") {
+   margin-top: 40px;
+  }
+}
+.section-btn{
+  a{
+      display: inline-block;
+      font-weight: bold;
+      font-family: variable.$font-en;
+      color:variable.$base-color;
+      background: variable.$accent-color;
+      padding: 18px 60px;
+      width: 235px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.16);
+      border-radius: 50px;
+
+      &:hover{
+          opacity: .7;
+      }
+  }
+  
+}

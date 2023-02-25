@@ -1,0 +1,114 @@
+@use "mixin";
+@use "variable";
+@use "common";
+@use "header";
+@use "main";
+@use "concept";
+@use "works";
+@use "service";
+@use "contact";
+@use "footer";
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Serif:wght@400;700&display=swap");
+
+/*================================
+base
+===============================*/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Noto Serif JP", serif;
+  line-height: 1.5;
+  font-size: 1.4em;
+  letter-spacing: 0.05em;
+  background: #fff;
+  color: variable.$base-color;
+  overflow-x: hidden;
+}
+img {
+  width: 100%;
+}
+
+a {
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+
+.inner {
+  width: mixin.$layout-width-inner;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 220px;
+
+  @include mixin.mq(tab) {
+    padding: 0 40px;
+  }
+
+  @include mixin.mq(sp) {
+    padding: 0 20px;
+  }
+}
+
+/*================================================================
+Chrome/Firefox/Edgeなど、各ブラウザはそれぞれデフォルトで効くCSSを持っています。
+何もしないと見え方が微妙に変わるので、デフォルトのCSSをリセットして
+ブラウザごとの表示の差異をなくすために書くのが「リセットCSS」です。
+================================================================*/
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+li,
+dt,
+dd,
+p,
+div,
+span,
+img,
+a,
+table,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: normal;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+header,
+footer,
+nav,
+section,
+article,
+aside,
+figure,
+figcaption {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+  list-style-type: none;
+}

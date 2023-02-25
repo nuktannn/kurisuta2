@@ -1,0 +1,71 @@
+@use "mixin";
+@use "variable";
+
+/*================================
+concept
+===============================*/
+
+.concept-lead{
+  font-size: 1.75rem;
+  text-align: center;
+  font-weight: bold;
+  line-height: (50 / 30);
+  margin-top: 80px;
+  letter-spacing: 0;
+
+  @include mixin.mq("sp") {
+    font-size: 1.25rem;
+    margin-top: 55px;
+    line-height: (30 / 20);
+  }
+}
+.concept-wrapper{
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+
+  @include mixin.mq("sp") {
+   flex-direction: column;
+   margin-top: 28px;
+  }
+  
+}
+.concept-left{
+ font-weight: bold;
+ line-height: (30 / 16);
+ width: 50%;
+ margin-right: 120px;
+
+ @include mixin.mq("tab") {
+  margin-right: 30px;
+ }
+
+ @include mixin.mq("sp") {
+  width: 100%;
+  margin-right: 0;
+}
+}
+.concept-right{
+  width: 50%;
+
+  @include mixin.mq("sp") {
+    width: 100%;
+    margin-top: 30px;
+    height: 100px;
+    object-fit: cover;
+  }
+
+  img{
+    display: block;
+  }
+}
+
+/* パソコンで見たときは"pc"のclassがついた画像が表示される */
+.is-pc { display: block !important; }
+.is-sp { display: none !important; }
+ 
+/* スマートフォンで見たときは"sp"のclassがついた画像が表示される */
+@include mixin.mq("sp") {
+  .is-pc { display: none !important; }
+  .is-sp { display: block !important; }
+}

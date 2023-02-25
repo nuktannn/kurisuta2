@@ -1,0 +1,77 @@
+@use "mixin";
+@use "variable";
+
+/*================================
+works
+===============================*/
+.works {
+  background: url(../img/works-bgi@2x.jpg) no-repeat center center / cover;
+  height: 986px;
+  width: 100%;
+  margin-top: 40px;
+  padding-top: 40px;
+
+  @include mixin.mq("sp") {
+    margin-top: 10px;
+    height: 1533px;
+  }
+}
+.text-right {
+  text-align: right;
+}
+.text-white {
+  color: #fff;
+}
+.works-items {
+  display: flex;
+  justify-content: space-between;
+  margin: 80px auto 0;
+
+  @include mixin.mq("sp") {
+    flex-direction: column;
+  }
+}
+.works-item {
+  width: 30%;
+  background: #fff;
+
+  @include mixin.mq("tab") {
+    width: 30%;
+  }
+
+  @include mixin.mq("sp") {
+    width: 100%;
+  }
+
+  a {
+    color: variable.$base-color;
+  }
+
+  &:not(:first-child) {
+    margin-left: 20px;
+
+
+    @include mixin.mq("sp") {
+      margin-left: 0;
+      margin-top: 30px;
+    }
+  }
+}
+
+.works-item-image {
+  img {
+    display: block;
+  }
+}
+.works-item-text {
+  padding: 25px 20px;
+  line-height: (30 / 16);
+}
+
+.section-bottom2 {
+  margin-top: 90px;
+
+  @include mixin.mq("sp") {
+    margin-top: 50px;
+  }
+}
